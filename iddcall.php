@@ -21,7 +21,7 @@ if (isset($_REQUEST['From'])){
 			
 echo '<Response>';
 if (array_key_exists('passcode_check', $_GET)) {
-  if ($_POST["Digits"] == '8999') { //密码正确则加到idd库，就下次不用输入密码了
+  if ($_POST["Digits"] == '899') { //密码正确则加到idd库，就下次不用输入密码了
   		
 	  $sql_insert =  "INSERT INTO `uskk_database`.`idduser` (`id`, `username`, `password`, `phone`, `dayleft`, `minleft`, `blacklist`, `logtime`) VALUES (default, NULL, NULL, '$iFrom', DATE_ADD(NOW() , INTERVAL 32 DAY), '1999', '', 'default')";
 	 $result=mysql_query($sql_insert,$link); 
@@ -30,7 +30,7 @@ if (array_key_exists('passcode_check', $_GET)) {
     echo '</Gather>';
   } else {
  
-//echo '<Sms from="+19015099996" to= '.$iFrom.'>请短信回复您淘宝名或者订单号码获取最新密码</Sms>'; //'.$_REQUEST["From"].'
+
      echo '<Say voice="alice" language="zh-CN">密码错误，请咨询24小时客服获取密码。</Say>';
      echo '<Hangup/>';
   }
