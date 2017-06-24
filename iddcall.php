@@ -13,7 +13,7 @@ date_default_timezone_set("America/Los_Angeles");
 header("content-type: text/xml");
  echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
-$my_url = 'http://uskk.us/twilio-php/app/testapp/callingapp/iddcalldb.php';
+$my_url = 'http://u.us/twilio-php/app/testapp/callingapp/iddcalldb.php';
 if (isset($_REQUEST['From'])){
 			$iFrom = preg_replace("#[^+0-9]#", '',$_REQUEST['From']);
 			$iFrom = substr($iFrom,-10);
